@@ -8,8 +8,7 @@ import { ArrowRight, Wand2, Box, Cpu } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-transparent">
-      <ParticleBackground />
+    <main className="relative min-h-screen bg-[#05050a]">
       <Navbar />
 
       {/* Hero Section */}
@@ -41,10 +40,10 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-4xl md:text-7xl font-black text-white mb-8 tracking-tight leading-[1.1] relative z-10 max-w-4xl"
+          className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tight leading-[1] relative z-10 max-w-5xl"
         >
           Unleash Your <br />
-          <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent italic">Magical Empire</span>
+          <span className="gradient-text italic">Magical Empire</span>
         </motion.h1>
 
         <motion.p
@@ -123,15 +122,21 @@ export default function Home() {
       </div>
 
 
-      <section className="py-40 px-8 text-center relative overflow-hidden">
+      <section className="py-52 px-8 text-center relative overflow-hidden">
         <motion.div
-          whileInView={{ scale: [0.9, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 4, repeat: Infinity }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[100px]"
+          whileInView={{ scale: [0.9, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 6, repeat: Infinity }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[120px]"
         />
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight">Ready to disrupt the <br /><span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Wizarding World?</span></h2>
-        <p className="text-slate-500 mb-12 max-w-xl mx-auto italic font-medium">"Innovation is just magic that hasn't been coded yet." - Albus Dumbledore, CEO</p>
-        <button className="px-10 py-5 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-black text-xl hover:scale-110 transition-transform shadow-2xl shadow-brand-primary/30">
+        <h2 className="text-4xl md:text-7xl font-black text-white mb-10 tracking-tight leading-tight">
+          Ready to disrupt the <br />
+          <span className="gradient-text">Wizarding World?</span>
+        </h2>
+        <p className="text-slate-500 mb-16 max-w-xl mx-auto italic font-medium text-lg">
+          "Innovation is just magic that hasn't been coded yet." <br />
+          <span className="text-xs uppercase tracking-widest mt-4 block text-slate-600">— Albus Dumbledore, CEO</span>
+        </p>
+        <button className="px-12 py-6 rounded-full bg-white text-black font-black text-xl hover:scale-105 transition-transform shadow-2xl shadow-white/10 active:scale-95">
           Apply to the Accelerator
         </button>
       </section>

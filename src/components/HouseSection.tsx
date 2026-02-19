@@ -51,11 +51,11 @@ export const HouseSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight"
+                    className="text-3xl md:text-6xl font-black text-white mb-8 tracking-tight"
                 >
-                    Our <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent italic">Founding Divisions</span>
+                    Our <span className="gradient-text italic">Founding Divisions</span>
                 </motion.h2>
-                <p className="text-slate-500 max-w-xl mx-auto text-base font-medium leading-relaxed">
+                <p className="text-slate-500 max-w-xl mx-auto text-lg font-medium leading-relaxed">
                     The four pillars of Hogwarts Labs, each dedicated to a specific aspect of the magical revolution.
                 </p>
             </div>

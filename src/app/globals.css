@@ -55,19 +55,29 @@ body {
   .glass {
     @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08];
   }
-  
+
   .text-glow {
     text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
   }
-  
+
   .magic-gradient {
     background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .gradient-text {
+    background: linear-gradient(to right, #a78bfa, #f472b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    display: inline-block;
   }
 
   .magic-card {
     position: relative;
-    background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -76,7 +86,6 @@ body {
   .magic-card:hover {
     border-color: rgba(139, 92, 246, 0.4);
     box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
-    background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
   }
 }
-
