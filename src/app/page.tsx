@@ -62,7 +62,7 @@ export default function Home() {
           transition={{ delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-5 relative z-10"
         >
-          <button className="px-8 py-4 rounded-2xl magic-gradient text-white font-bold shadow-xl shadow-brand-primary/20 hover:scale-105 transition-all flex items-center gap-2 group">
+          <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold shadow-xl shadow-brand-primary/20 hover:scale-105 transition-all flex items-center gap-2 group">
             Get Seed Funding <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
           <button className="px-8 py-4 rounded-2xl glass text-white font-bold hover:bg-white/10 transition-all flex items-center gap-2">
@@ -123,16 +123,15 @@ export default function Home() {
       </div>
 
 
-      {/* Footer-ish CTAs */}
-      <section className="py-32 px-8 text-center relative overflow-hidden">
+      <section className="py-40 px-8 text-center relative overflow-hidden">
         <motion.div
           whileInView={{ scale: [0.9, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 4, repeat: Infinity }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[100px]"
         />
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">Ready to disrupt the <br /><span className="text-brand-accent">Wizarding World?</span></h2>
-        <p className="text-slate-400 mb-12 max-w-xl mx-auto italic">"Innovation is just magic that hasn't been coded yet." - Albus Dumbledore, CEO</p>
-        <button className="px-10 py-5 rounded-full magic-gradient text-white font-black text-xl hover:scale-110 transition-transform shadow-2xl shadow-brand-primary/30">
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight">Ready to disrupt the <br /><span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Wizarding World?</span></h2>
+        <p className="text-slate-500 mb-12 max-w-xl mx-auto italic font-medium">"Innovation is just magic that hasn't been coded yet." - Albus Dumbledore, CEO</p>
+        <button className="px-10 py-5 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-black text-xl hover:scale-110 transition-transform shadow-2xl shadow-brand-primary/30">
           Apply to the Accelerator
         </button>
       </section>

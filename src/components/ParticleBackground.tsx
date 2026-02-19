@@ -33,14 +33,14 @@ export const ParticleBackground: React.FC = () => {
 
         const initParticles = () => {
             particles = [];
-            const count = Math.floor((canvas.width * canvas.height) / 10000);
+            const count = Math.floor((canvas.width * canvas.height) / 25000);
             for (let i = 0; i < count; i++) {
                 particles.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
-                    vx: (Math.random() - 0.5) * 0.5,
-                    vy: (Math.random() - 0.5) * 0.5,
-                    size: Math.random() * 2 + 1,
+                    vx: (Math.random() - 0.5) * 0.2,
+                    vy: (Math.random() - 0.5) * 0.2,
+                    size: Math.random() * 1.5 + 0.5,
                     color: Math.random() > 0.5 ? "#8b5cf6" : "#d946ef",
                 });
             }
@@ -122,7 +122,7 @@ export const ParticleBackground: React.FC = () => {
         <canvas
             ref={canvasRef}
             className="fixed inset-0 pointer-events-none z-0"
-            style={{ opacity: 0.6 }}
+            style={{ opacity: 0.2 }}
         />
     );
 };
