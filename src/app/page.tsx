@@ -4,145 +4,220 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { HouseSection } from "@/components/HouseSection";
-import { ArrowRight, Wand2, Box, Cpu } from "lucide-react";
+import { ArrowRight, Wand2, Box, Cpu, Zap, Sparkles } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-[#05050a]">
+    <main className="relative min-h-screen bg-[#020617]">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-8 text-center overflow-hidden">
-        <div className="absolute inset-0 z-0 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-8 text-center overflow-hidden">
+        {/* Background Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#020617]"></div>
           <img
             src="/hero-hogwarts.png"
-            alt="Cinematic Hogwarts Startup HQ"
-            className="w-full h-full object-cover opacity-25 scale-105"
+            alt="Hogwarts Innovation HQ"
+            className="w-full h-full object-cover opacity-40 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#05050a] via-transparent to-[#05050a]"></div>
-          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-6 relative z-10 border-white/10"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 flex flex-col items-center"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
-          </span>
-          <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400">Phase 1: Automating Alchemy</span>
+          <h1 className="text-6xl md:text-9xl font-black mb-2 tracking-tight text-brand-primary drop-shadow-2xl" style={{ fontFamily: 'var(--font-cinzel)' }}>
+            Hogwarts<br />
+            <span className="text-white brightness-125">Innovations</span>
+          </h1>
+
+          <div className="mb-6 bg-brand-accent/20 px-6 py-1 border-y border-brand-primary/30">
+            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-[0.4em] text-brand-primary">
+              Magic Meets Technology
+            </h2>
+          </div>
+
+          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-12 font-medium italic">
+            Where Enchantment Fuels Entrepreneurship
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6 mb-24">
+            <button className="btn-teal text-lg min-w-[200px]">
+              Get a Demo
+            </button>
+            <button className="btn-orange text-lg min-w-[200px]">
+              Join the Team
+            </button>
+          </div>
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tight leading-[1] relative z-10 max-w-5xl"
-        >
-          Unleash Your <br />
-          <span className="gradient-text italic">Magical Empire</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="text-base md:text-lg text-slate-400 max-w-xl mb-12 relative z-10 leading-relaxed"
-        >
-          Hogwarts Labs bridges the gap between ancient spells and modern computing power to build the future of decentralized magic.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-5 relative z-10"
-        >
-          <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold shadow-xl shadow-brand-primary/20 hover:scale-105 transition-all flex items-center gap-2 group">
-            Get Seed Funding <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button className="px-8 py-4 rounded-2xl glass text-white font-bold hover:bg-white/10 transition-all flex items-center gap-2">
-            Read the Spell-Book
-          </button>
-        </motion.div>
-      </section>
-
-      {/* Feature Section */}
-      <section className="py-32 px-8 relative z-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+        {/* Bottom Features Grid */}
+        <div className="relative z-10 w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/10 pt-12 pb-24">
           {[
-            {
-              title: "Automated Potions",
-              icon: Box,
-              image: "/features/potions.png",
-              desc: "Our AI-driven cauldrons craft 10,000 flasks per hour with 99.9% purity."
-            },
-            {
-              title: "Quantum Spells",
-              icon: Cpu,
-              image: "/features/quantum.png",
-              desc: "Computing magic at the speed of thought using Ravenclaw's neural engine."
-            },
-            {
-              title: "Smart Wands",
-              icon: Wand2,
-              image: "/features/wands.png",
-              desc: "Wands connected to the cloud for real-time telemetry and OTA spell updates."
-            }
+            { title: "Wizard Tech Solutions", icon: Cpu, desc: "Bespoke enchantment-based software for the modern wizarding era." },
+            { title: "Startup Incubator", icon: Box, desc: "Fostering the next generation of magical disruptors and visionaries." },
+            { title: "Enchanted Networking", icon: Zap, desc: "Connecting magical minds through our high-speed neural owl network." }
           ].map((feature, idx) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="magic-card group relative p-10 rounded-[2rem] overflow-hidden border-white/5 hover:border-brand-primary/30 transition-all duration-500"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 + (idx * 0.1) }}
+              className="flex flex-col items-center gap-4"
             >
-              <div className="absolute inset-0 z-0 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
-                <img src={feature.image} alt={feature.title} className="w-full h-full object-cover grayscale" />
+              <div className="p-3 rounded-full bg-brand-primary/10 border border-brand-primary/20">
+                <feature.icon className="w-6 h-6 text-brand-primary" />
               </div>
-
-              <div className="relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-8 group-hover:bg-brand-primary/20 transition-colors">
-                  <feature.icon className="w-7 h-7 text-brand-primary" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{feature.title}</h3>
-                <p className="text-slate-500 text-sm font-medium leading-relaxed">{feature.desc}</p>
-              </div>
+              <h3 className="text-xl font-bold text-white tracking-wide" style={{ fontFamily: 'var(--font-cinzel)' }}>{feature.title}</h3>
+              <div className="h-px w-12 bg-brand-primary/30 my-1"></div>
+              <p className="text-slate-400 text-xs leading-relaxed max-w-[200px] text-center">
+                {feature.desc}
+              </p>
             </motion.div>
           ))}
         </div>
       </section>
 
-      <div className="py-20">
-        <HouseSection />
-      </div>
+      {/* Campus Section */}
+      <section className="py-32 px-12 bg-black/40 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-black text-brand-primary mb-4" style={{ fontFamily: 'var(--font-cinzel)' }}>
+              Our Campus
+            </h2>
+            <div className="h-1 w-24 bg-brand-primary/30 mx-auto rounded-full"></div>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div className="magic-card aspect-video group cursor-pointer overflow-hidden relative">
+              <img src="/campus-1.png" className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" alt="Innovation Tower" />
+              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-cinzel)' }}>Innovation Tower</h3>
+                <p className="text-slate-300 text-sm">Where ideas take flight beyond the castle walls.</p>
+              </div>
+            </div>
+            <div className="magic-card aspect-video group cursor-pointer overflow-hidden relative border-brand-primary/20">
+              <img src="/campus-2.png" className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" alt="Cutting-Edge Labs" />
+              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 className="text-2xl font-bold text-brand-primary mb-2" style={{ fontFamily: 'var(--font-cinzel)' }}>Cutting-Edge Labs</h3>
+                <p className="text-slate-300 text-sm">Synthetic potions and neural magic manufacturing.</p>
+              </div>
+            </div>
+          </div>
 
-      <section className="py-52 px-8 text-center relative overflow-hidden">
-        <motion.div
-          whileInView={{ scale: [0.9, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 6, repeat: Infinity }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[120px]"
-        />
-        <h2 className="text-4xl md:text-7xl font-black text-white mb-10 tracking-tight leading-tight">
-          Ready to disrupt the <br />
-          <span className="gradient-text">Wizarding World?</span>
-        </h2>
-        <p className="text-slate-500 mb-16 max-w-xl mx-auto italic font-medium text-lg">
-          "Innovation is just magic that hasn't been coded yet." <br />
-          <span className="text-xs uppercase tracking-widest mt-4 block text-slate-600">— Albus Dumbledore, CEO</span>
-        </p>
-        <button className="px-12 py-6 rounded-full bg-white text-black font-black text-xl hover:scale-105 transition-transform shadow-2xl shadow-white/10 active:scale-95">
-          Apply to the Accelerator
-        </button>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="magic-card aspect-square group p-6 flex flex-col justify-end border-white/5">
+              <h4 className="text-xl font-bold text-white mb-2">Weekly Startup Pitches</h4>
+              <p className="text-slate-400 text-xs">Held in the Great Hall every Friday at noon.</p>
+            </div>
+            <div className="magic-card aspect-square group flex flex-col items-center justify-center p-6 border-white/5">
+              <div className="w-32 h-32 rounded-full border-2 border-brand-primary/30 flex items-center justify-center mb-4">
+                <Sparkles className="w-16 h-16 text-brand-primary/50" />
+              </div>
+              <span className="text-xs uppercase tracking-[0.3em] text-brand-primary font-bold">Incubation Meta</span>
+            </div>
+            <div className="magic-card aspect-square group p-6 flex flex-col justify-end border-white/5">
+              <h4 className="text-xl font-bold text-white mb-2">Collaborative Workspaces</h4>
+              <p className="text-slate-400 text-xs">Hot-desks and private chambers for enchanted teams.</p>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <footer className="py-12 border-t border-white/5 text-center text-slate-500 text-sm">
-        &copy; 2024 Hogwarts Labs Inc. Disrupting magic since the 10th century.
+      {/* Join the Magic Section */}
+      <section className="relative py-40 px-12 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 z-0">
+          <img src="/hogwarts-office-night.png" className="w-full h-full object-cover opacity-30" alt="Hogwarts Background" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/40 to-[#020617]"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-white" style={{ fontFamily: 'var(--font-cinzel)' }}>
+              Join the Magic.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+            {/* Openings */}
+            <div className="lg:col-span-4 magic-card p-10 bg-black/60 border border-brand-primary/20">
+              <h3 className="text-2xl font-bold text-white mb-8">Current Openings</h3>
+              <div className="space-y-4 mb-8">
+                {[
+                  { name: "Charms Developer", icon: Wand2 },
+                  { name: "Potions Engineer", icon: Box },
+                  { name: "Data Wizard", icon: Cpu }
+                ].map((role) => (
+                  <div key={role.name} className="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors cursor-pointer group">
+                    <role.icon className="w-4 h-4 text-brand-primary" />
+                    <span className="text-sm font-medium text-slate-300">{role.name}</span>
+                  </div>
+                ))}
+              </div>
+              <button className="btn-orange w-full py-3 text-sm">Apply Now</button>
+            </div>
+
+            {/* Interaction Area (Middle) */}
+            <div className="lg:col-span-4 flex flex-col items-center justify-center self-stretch py-12">
+              {/* Visual spacing as per the image */}
+            </div>
+
+            {/* Success Stories */}
+            <div className="lg:col-span-4 magic-card p-10 bg-black/60 border border-brand-primary/20">
+              <h3 className="text-2xl font-bold text-white mb-8">Startup Success Stories</h3>
+              <div className="space-y-6 mb-8">
+                <div className="flex gap-4 items-center">
+                  <div className="w-12 h-12 rounded-lg bg-orange-900/40 border border-orange-500/20"></div>
+                  <div>
+                    <h4 className="font-bold text-brand-primary">Nimbus AI</h4>
+                    <p className="text-[10px] text-slate-400 italic">Flying Fast in the AI Space</p>
+                  </div>
+                </div>
+                <div className="flex gap-4 items-center border-t border-white/5 pt-6">
+                  <div className="w-12 h-12 rounded-lg bg-yellow-900/40 border border-yellow-500/20"></div>
+                  <div>
+                    <h4 className="font-bold text-brand-accent">TimeTurner Tech</h4>
+                    <p className="text-[10px] text-slate-400 italic">Revolutionizing Productivity</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Form & Footer Info */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-4"></div>
+            <div className="lg:col-span-4 bg-black/60 p-8 rounded-xl border border-white/10">
+              <h4 className="text-xl font-bold text-brand-primary mb-6 text-center">Get in Touch</h4>
+              <div className="space-y-3">
+                <input type="text" placeholder="Your Name" className="w-full bg-white/5 border border-white/10 rounded p-2.5 text-sm text-white focus:outline-none focus:border-brand-primary" />
+                <input type="email" placeholder="Your Email" className="w-full bg-white/5 border border-white/10 rounded p-2.5 text-sm text-white focus:outline-none focus:border-brand-primary" />
+                <textarea placeholder="Your Message" rows={2} className="w-full bg-white/5 border border-white/10 rounded p-2.5 text-sm text-white focus:outline-none focus:border-brand-primary resize-none"></textarea>
+                <button className="w-full bg-[#9a4d2b] py-2 rounded text-xs font-black uppercase tracking-widest text-white hover:bg-[#b05a35] transition-colors">Send</button>
+              </div>
+            </div>
+            <div className="lg:col-span-4 flex flex-col items-center justify-end py-4">
+              <div className="text-center">
+                <p className="text-[9px] uppercase tracking-widest text-slate-500 mb-2">In Partnership With Gringotts Ventures</p>
+                <div className="flex gap-4 justify-center opacity-60">
+                  {/* Icons similar to reference */}
+                  <span className="text-white">𝕏</span>
+                  <span className="text-white">📷</span>
+                  <span className="text-white">🎵</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="py-12 border-t border-white/5 bg-[#020617] text-center text-slate-500 text-sm relative z-10">
+        &copy; 2024 Hogwarts Innovations. All rights reserved. <br />
+        <span className="text-[10px] uppercase tracking-[0.5em] mt-4 block opacity-30 italic">Disrupting the magical realm</span>
       </footer>
     </main>
   );

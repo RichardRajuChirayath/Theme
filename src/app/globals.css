@@ -1,17 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #8b5cf6;
-  --color-brand-secondary: #d946ef;
-  --color-brand-accent: #fbbf24;
+  --color-brand-primary: #d4af37;
+  /* Golden */
+  --color-brand-secondary: #0f172a;
+  /* Deep Blue/Midnight */
+  --color-brand-accent: #f97316;
+  /* Warm Orange */
   --color-dark-surface: #0a0a0f;
-  --color-dark-elevated: #16161d;
+  --color-dark-elevated: #1e1e2d;
 }
 
 :root {
-  --background: #05050a;
+  --background: #020617;
   --foreground: #f8fafc;
-  --selection-bg: rgba(139, 92, 246, 0.3);
+  --selection-bg: rgba(212, 175, 55, 0.3);
 }
 
 * {
@@ -24,8 +27,16 @@ body {
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.serif {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.02em;
 }
 
 ::selection {
@@ -39,35 +50,33 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #05050a;
+  background: #020617;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e1e2d;
+  background: #1e293b;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2d2d3f;
+  background: #334155;
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08];
+    @apply bg-black/40 backdrop-blur-xl border border-white/10;
   }
 
   .text-glow {
-    text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
   }
 
-  .magic-gradient {
-    background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
+  .gold-gradient {
+    background: linear-gradient(135deg, #d4af37 0%, #fde68a 100%);
   }
 
   .gradient-text {
-    background: linear-gradient(to right, #a78bfa, #f472b6);
+    background: linear-gradient(to bottom, #fde68a, #d4af37);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent !important;
@@ -76,16 +85,24 @@ body {
 
   .magic-card {
     position: relative;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(212, 175, 55, 0.1);
     border-radius: 1rem;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .magic-card:hover {
-    border-color: rgba(139, 92, 246, 0.4);
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .btn-teal {
+    @apply bg-[#2d6a7f] hover:bg-[#3e8ca6] text-white px-6 py-2.5 rounded-lg font-bold transition-all shadow-lg;
+  }
+
+  .btn-orange {
+    @apply bg-[#9a4d2b] hover:bg-[#b05a35] text-white px-6 py-2.5 rounded-lg font-bold transition-all shadow-lg;
   }
 }

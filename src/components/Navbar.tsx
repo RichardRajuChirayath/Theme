@@ -10,38 +10,33 @@ export const Navbar = () => {
         <motion.nav
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 glass mx-8 mt-6 rounded-2xl"
+            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-12 py-5 bg-black/20 backdrop-blur-md border-b border-white/5"
         >
-            <div className="flex items-center gap-2 group cursor-pointer">
-                <div className="p-2 magic-gradient rounded-lg shadow-lg group-hover:scale-110 transition-transform">
-                    <Sparkles className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-xl font-bold tracking-tight text-white">HOGWARTS <span className="text-brand-primary">LABS</span></span>
+            <div className="flex items-center gap-3 cursor-pointer group">
+                <Sparkles className="w-6 h-6 text-brand-primary" />
+                <span className="text-2xl font-black tracking-widest text-brand-primary uppercase" style={{ fontFamily: 'var(--font-cinzel)' }}>
+                    Hogwarts <span className="text-white">Innovations</span>
+                </span>
             </div>
 
-            <div className="hidden md:flex items-center gap-8">
-                {[
-                    { name: "Solutions", icon: Terminal },
-                    { name: "Departments", icon: Shield },
-                    { name: "Innovation", icon: Zap },
-                ].map((item) => (
+            <div className="hidden md:flex items-center gap-10">
+                {["Accelerator", "Strategic Partners", "About", "Campus", "Portfolio"].map((item) => (
                     <Link
-                        key={item.name}
+                        key={item}
                         href="#"
-                        className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                        className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-primary transition-colors"
                     >
-                        <item.icon className="w-4 h-4" />
-                        {item.name}
+                        {item}
                     </Link>
                 ))}
             </div>
 
-            <div className="flex items-center gap-4">
-                <button className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
-                    Login
+            <div className="flex items-center gap-6">
+                <button className="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-white transition-colors">
+                    Portal Login
                 </button>
-                <button className="px-5 py-2 rounded-xl magic-gradient text-white text-sm font-bold shadow-lg shadow-brand-primary/20 hover:scale-105 transition-transform active:scale-95">
-                    Join the Magic
+                <button className="px-6 py-2.5 rounded-lg bg-[#9a4d2b] hover:bg-[#b05a35] text-white text-[11px] font-black uppercase tracking-widest shadow-lg transition-all active:scale-95">
+                    Join the Team
                 </button>
             </div>
         </motion.nav>
