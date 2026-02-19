@@ -44,7 +44,7 @@ export default function Home() {
           className="text-4xl md:text-7xl font-black text-white mb-8 tracking-tight leading-[1.1] relative z-10 max-w-4xl"
         >
           Unleash Your <br />
-          <span className="magic-gradient bg-clip-text text-transparent italic">Magical Empire</span>
+          <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent italic">Magical Empire</span>
         </motion.h1>
 
         <motion.p
